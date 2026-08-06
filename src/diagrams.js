@@ -619,3 +619,5 @@ function getDiagram(weekId, prefix, les){
   }catch(e){ /* ẩn diagram nếu lỗi */ return ""; }
   return "";
 }
+
+export { getDiagram };

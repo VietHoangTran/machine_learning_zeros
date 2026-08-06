@@ -785,6 +785,11 @@ const GLOSSARY = [
 const PROJECTS = [
   { title:"Mini-project 1 — Hồi quy nhà đất", week:4, weight:"35% (mini-project chung)", focus:"Hồi quy",
     desc:"Tự xây mô hình hồi quy trên dữ liệu nhà đất. Đánh giá bằng MAE/RMSE, giải thích yếu tố ảnh hưởng giá.",
+    datasets:[
+      { name:"California Housing (scikit-learn)", url:"https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_california_housing.html" },
+      { name:"Boston Housing (Kaggle)", url:"https://www.kaggle.com/datasets/fedesoriano/california-housing-prices" },
+      { name:"House Prices — Advanced Regression (Kaggle)", url:"https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques" },
+    ],
     checklist:[
       "Chọn bộ dữ liệu giá nhà.", "Làm sạch dữ liệu (thiếu, trùng, outlier).",
       "Chia train/test, huấn luyện hồi quy tuyến tính.",
@@ -792,6 +797,12 @@ const PROJECTS = [
     ]},
   { title:"Mini-project 2 — So sánh mô hình", week:7, weight:"35% (mini-project chung)", focus:"Ensemble & so sánh",
     desc:"So sánh ít nhất 3 mô hình trên cùng bài toán, bảo vệ lựa chọn bằng số liệu.",
+    datasets:[
+      { name:"Iris (scikit-learn)", url:"https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html" },
+      { name:"Titanic (Kaggle)", url:"https://www.kaggle.com/competitions/titanic" },
+      { name:"Wine Quality (UCI)", url:"https://archive.ics.uci.edu/dataset/186/wine+quality" },
+      { name:"Heart Disease (UCI)", url:"https://archive.ics.uci.edu/dataset/45/heart+disease" },
+    ],
     checklist:[
       "Chọn bài toán và dữ liệu.", "Pipeline chung (chia, chuẩn hóa).",
       "So sánh ≥3 mô hình cùng metric.", "Chọn và bảo vệ model tốt nhất.",
@@ -799,6 +810,12 @@ const PROJECTS = [
     ]},
   { title:"Mini-project 3 — Tự chọn", week:9, weight:"35% (mini-project chung)", focus:"Mạng nơ-ron / phân cụm",
     desc:"Mở rộng mạng nhận dạng chữ số HOẶC nghiên cứu phân cụm.",
+    datasets:[
+      { name:"MNIST (scikit-learn)", url:"https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html" },
+      { name:"MNIST gốc (Kaggle)", url:"https://www.kaggle.com/competitions/digit-recognizer" },
+      { name:"Mall Customers (Kaggle)", url:"https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python" },
+      { name:"Wholesale Customers (UCI)", url:"https://archive.ics.uci.edu/dataset/292/wholesale+customers" },
+    ],
     checklist:[
       "Chọn hướng (mạng nơ-ron hoặc phân cụm).",
       "Thực hiện: dữ liệu, mô hình, đánh giá.",
@@ -806,6 +823,11 @@ const PROJECTS = [
     ]},
   { title:"Đồ án cuối khóa (nhóm)", week:11, weight:"40%", focus:"Đồ án trọn vẹn",
     desc:"Dự án nhóm trên bộ dữ liệu tự chọn, thực hiện tuần 11, thuyết trình buổi cuối.",
+    datasets:[
+      { name:"Kaggle Datasets (tìm kiếm theo chủ đề)", url:"https://www.kaggle.com/datasets" },
+      { name:"UCI Machine Learning Repository", url:"https://archive.ics.uci.edu/" },
+      { name:"scikit-learn built-in datasets", url:"https://scikit-learn.org/stable/datasets.html" },
+    ],
     checklist:[
       "Lập nhóm, chọn dữ liệu & câu hỏi nghiên cứu.",
       "Chốt đề cương (1 trang).",
@@ -814,3 +836,5 @@ const PROJECTS = [
       "Thuyết trình & demo sản phẩm."
     ]},
 ];
+
+export { COURSE, WEEKS, CHEATSHEETS, GLOSSARY, PROJECTS };

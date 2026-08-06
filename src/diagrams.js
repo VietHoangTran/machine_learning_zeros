@@ -536,6 +536,33 @@ function getDiagram(weekId, prefix, les){
         "Data leakage: thông tin từ test 'rò' vào quá trình huấn luyện, khiến mô hình gian lận và điểm cao giả tạo. Luôn fit mọi thứ chỉ trên train.");
     }
 
+    if(weekId===10 && prefix==='l2'){
+      return diagramWrap("Baseline — mốc so sánh mô hình",
+        `<svg width="560" height="200" viewBox="0 0 560 200" role="img" aria-label="Baseline so sánh">
+          <!-- baseline bar -->
+          <g font-family="monospace" font-size="11" fill="#242645">
+            <text x="30" y="40" text-anchor="start" fill="#B0493F">Baseline (đoán đa số / trung bình)</text>
+            <rect x="30" y="50" width="140" height="30" rx="6" fill="#F3DCDA" stroke="#B0493F"/>
+            <text x="100" y="70" text-anchor="middle" fill="#B0493F">accuracy ~ 60%</text>
+          </g>
+          <!-- gap arrow -->
+          <g class="flow" stroke="#2E3159" stroke-width="2"><line x1="185" y1="65" x2="245" y2="65"/><text x="215" y="58" font-family="monospace" font-size="10" fill="#2E3159" text-anchor="middle">phải vượt</text></g>
+          <!-- your model bar -->
+          <g font-family="monospace" font-size="11" fill="#242645">
+            <text x="250" y="40" text-anchor="start" fill="#3E7D5C">Mô hình của bạn</text>
+            <rect x="250" y="50" width="220" height="30" rx="6" fill="#DCEBDF" stroke="#3E7D5C" class="glow"/>
+            <text x="360" y="70" text-anchor="middle" fill="#242645">accuracy ~ 85% ✓</text>
+          </g>
+          <!-- note -->
+          <g class="floaty">
+            <rect x="60" y="110" width="440" height="60" rx="8" fill="#23253F"/>
+            <text x="280" y="132" font-family="monospace" font-size="11" fill="#E8A33D" text-anchor="middle">Mô hình thật phải tốt hơn baseline</text>
+            <text x="280" y="152" font-family="monospace" font-size="10" fill="#E9E9F5" text-anchor="middle">nếu không, mô hình phức tạp chưa có ý nghĩa</text>
+          </g>
+        </svg>`,
+        "Baseline là mô hình ngây thơ nhất (đoán nhãn đa số). Mô hình thật của bạn phải vượt baseline thì mới đáng tin — xác định baseline ngay từ đầu đồ án.");
+    }
+
     /* TUẦN 11 — Tuần đồ án */
     if(weekId===11){
       if(prefix==='l1'){

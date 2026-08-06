@@ -18,7 +18,7 @@ function CheckItem({ k, text, checked, onChange }) {
   return (
     <div className={"check" + (checked ? " done" : "")}>
       <input type="checkbox" id={k} checked={checked} onChange={() => onChange(k)} />
-      <label className="t" htmlFor={k}>{text}</label>
+      <label className="t" htmlFor={k} dangerouslySetInnerHTML={{ __html: text }} />
     </div>
   );
 }

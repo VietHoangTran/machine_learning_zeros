@@ -38,7 +38,7 @@ const WEEKS = [
       "Colab lưu trạng thái giữa các ô: biến bạn gán ở ô trên vẫn còn ở ô dưới. Chạy theo thứ tự từ trên xuống — nếu lỡ chạy ô dưới trước khi gán biến ở ô trên sẽ báo lỗi 'chưa định nghĩa'."
     ],
     concept:"Nguyên tắc vàng của Python: code đọc được như tiếng người. Chỉ số của list bắt đầu từ 0.",
-    code:"x = 5\nname = 'An'\nprint(type(x))            # <class 'int'> — kiểu tự suy ra\n\nlst = [10, 20, 30, 40]\nprint(lst[0], lst[-1])    # 10 40\nprint(lst[1:3])           # [20, 30]  (từ vị trí 1 đến hết vị trí 2)\n\nd = {'ten': 'An', 'tuoi': 20}\nprint(d['ten'])           # An\n\nprint(f'{name} năm nay {d[\"tuoi\"]} tuổi')  # An năm nay 20 tuổi",
+    code:"x = 5\nname = 'An'\nprint(type(x))            # &lt;class 'int'&gt; — kiểu tự suy ra\n\nlst = [10, 20, 30, 40]\nprint(lst[0], lst[-1])    # 10 40\nprint(lst[1:3])           # [20, 30]  (từ vị trí 1 đến hết vị trí 2)\n\nd = {'ten': 'An', 'tuoi': 20}\nprint(d['ten'])           # An\n\nprint(f'{name} năm nay {d[\"tuoi\"]} tuổi')  # An năm nay 20 tuổi",
     checklist:[
       "Mở Google Colab (colab.research.google.com) và tạo notebook mới.",
       "Viết và chạy cell đầu tiên: <span class='code-inline'>print('Xin chào!')</span>",

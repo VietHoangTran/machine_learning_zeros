@@ -8,7 +8,7 @@ function loadState() {
     const raw = localStorage.getItem(SKEY);
     if (raw) return JSON.parse(raw);
   } catch (e) {}
-  return { checks: {}, notes: {}, cards: {}, quizResults: {}, answers: {}, streak: { last: "", count: 0 } };
+  return { checks: {}, notes: {}, cards: {}, quizResults: {}, answers: {}, streak: { last: "", count: 0 }, pomos: {} };
 }
 
 /* Date helpers */
@@ -172,6 +172,18 @@ export function AppProvider({ children }) {
     touch();
   }, [touch]);
 
+  /* Pomodoro: ghi nhận một phiên 25' hoàn thành cho hôm nay (key = ngày) */
+  const recordPomo = useCallback(() => {
+    const t = todayStr();
+    setState(prev => {
+      const p = prev.pomos || {};
+      const next = { ...prev, pomos: { ...p, [t]: (p[t] || 0) + 1 } };
+      try { localStorage.setItem(SKEY, JSON.stringify(next)); } catch (e) {}
+      return next;
+    });
+    touch();
+  }, [touch]);
+
   const answerCard = useCallback((i, knew) => {
     setState(prev => {
       const cards = prev.cards || {};
@@ -196,7 +208,8 @@ export function AppProvider({ children }) {
     todayStr, addDaysStr, yesterdayStr,
     weekChecks, weekDoneCount, weekTotalCount, allWeekKeys, overallPct, weekDone,
     weakWeeks, todaySuggestions,
-    toggleCheck, saveNote, answerQ, answerExam, answerCard,
+    toggleCheck, saveNote, answerQ, answerExam, answerCard, recordPomo,
+    todayPomos: () => (state.pomos || {})[todayStr()] || 0,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

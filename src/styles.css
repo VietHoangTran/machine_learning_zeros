@@ -133,10 +133,15 @@
   .lesson .code{
     background:#23253F; color:#E9E9F5; border-radius:4px;
     padding:10px 12px; margin:8px 0; font-size:12px; line-height:1.6; overflow-x:auto;
+    white-space:pre; font-family:'SF Mono',ui-monospace,Menlo,monospace;
   }
   .lesson .code .c{color:#8FA3C9; font-style:italic;} /* comment */
   .lesson .code .k{color:#E8A33D; font-weight:600;}      /* keyword */
   .lesson .code .s{color:#8FBF8F;}                        /* string */
+  .lesson .code-inline{
+    background:#ECEEF6; color:#7C5CFC; font-family:'SF Mono',ui-monospace,Menlo,monospace;
+    padding:1px 5px; border-radius:3px; font-size:12px;
+  }
 
   /* Checklist */
   .check{display:flex; align-items:flex-start; gap:10px; padding:7px 2px;}
@@ -328,6 +333,39 @@
     font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-soft);
     border:1px solid var(--paper-line); border-radius:3px; padding:2px 7px; margin-right:6px;
   }
+
+  /* Pomodoro */
+  .pomo-today{font-size:11.5px; color:var(--ink-soft); letter-spacing:.03em;}
+  .pomo-ring{position:relative; width:150px; height:150px; margin:6px auto 10px;}
+  .pomo-svg{width:100%; height:100%; transform:rotate(-90deg);}
+  .pomo-track{fill:none; stroke:var(--paper-line); stroke-width:7;}
+  .pomo-prog{
+    fill:none; stroke:var(--accent); stroke-width:7; stroke-linecap:round;
+    transition:stroke-dashoffset .3s linear;
+  }
+  .pomo-inner{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:2px;
+  }
+  .pomo-label{font-size:10.5px; text-transform:uppercase; letter-spacing:.12em; color:var(--ink-soft);}
+  .pomo-display{
+    font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:34px; color:var(--tab); line-height:1;
+  }
+  .pomo-cycle{font-size:10.5px; color:var(--ink-soft);}
+  .pomo-phase-tabs{display:flex; justify-content:center; gap:6px; margin-bottom:12px;}
+  .pomo-tab{
+    background:none; border:1px solid var(--paper-line); color:var(--ink-soft);
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; padding:5px 14px; border-radius:4px; cursor:pointer;
+  }
+  .pomo-tab.active{background:var(--tab); border-color:var(--tab); color:#fff;}
+  .pomo-controls{display:flex; justify-content:center; gap:10px;}
+  .pomo-btn{
+    background:none; border:1px solid var(--paper-line); color:var(--ink-soft);
+    font-family:'IBM Plex Mono',monospace; font-size:12px; padding:8px 16px; border-radius:5px; cursor:pointer;
+  }
+  .pomo-btn.start{background:var(--done); border-color:var(--done); color:#fff; font-weight:600;}
+  .pomo-btn.start.pause{background:var(--highlight); border-color:var(--highlight);}
+  .pomo-btn:hover{opacity:.9;}
 
   /* Print styles */
   @media print{
